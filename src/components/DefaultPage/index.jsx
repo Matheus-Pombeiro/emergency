@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const DefaultPage = () => {
     return (
-        <main>
+        <main className="default-page">
             <Outlet />
         </main>
     );
