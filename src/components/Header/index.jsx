@@ -5,6 +5,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import Navbar from "../Navbar";
 import { useState } from "react";
 import MenuHamburger from "../MenuHamburger";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     // Set a initial value for the menu hamburger state (opened / closed)
@@ -21,7 +22,9 @@ const Header = () => {
 
     return (
         <header className="header-mobile">
-            <MdLocalHospital {...logoSet}/>
+            <NavLink to="/">
+                <MdLocalHospital {...logoSet}/>
+            </NavLink>
 
             <div className="header-btn-container">
                 <ThemeSwitcher btnSet={btnSet}/>
