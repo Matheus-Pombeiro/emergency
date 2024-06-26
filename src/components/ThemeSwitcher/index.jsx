@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoSunny, IoMoonSharp  } from "react-icons/io5";
 
 const ThemeSwitcher = ({ btnSet }) => {
-    const [themeBtn, setThemeBtn] = useState(true); // Helps the theme icons 
+    const [themeBtn, setThemeBtn] = useState(true); // Helps the theme icons
 
     // Changes the app's theme
     const handleTheme = () => {
@@ -15,7 +15,7 @@ const ThemeSwitcher = ({ btnSet }) => {
         <button onClick={handleTheme}>
             {themeBtn
                 ? <IoSunny {...btnSet}/>
-                : <IoMoonSharp {...btnSet} />
+                : <IoMoonSharp {...btnSet}/>
             }
         </button>
     );
