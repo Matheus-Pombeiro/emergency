@@ -1,19 +1,25 @@
 import { MdLocalHospital } from "react-icons/md";
 import ThemeSwitcher from "../ThemeSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const Header = () => {
-    const btnSet = {
-        size: 45
+    const logoSet = {   // Logo settings
+        size: 45,
+        color: "red"
+    };
+
+    const btnSet = {    // Buttons settings
+        size: 40
     };
 
     return (
-        <header>
-            <MdLocalHospital 
-                {...btnSet}
-                color="red"
-            />
+        <header className="header-mobile">
+            <MdLocalHospital {...logoSet}/>
 
-            <ThemeSwitcher btnSet={btnSet}/>
+            <div className="header-btn-container">
+                <ThemeSwitcher btnSet={btnSet}/>
+                <LanguageSwitcher btnSet={btnSet}/>
+            </div>
         </header>
     );
 };
