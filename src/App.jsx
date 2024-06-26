@@ -12,7 +12,7 @@ const App = () => {
     <>
       <BrowserRouter>
         
-        <div className="min-h-screen dark:bg-neutral-600">
+        <div className="app-container">
           
           <Header />
 
