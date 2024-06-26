@@ -4,11 +4,39 @@
 
 @layer components {
 
+    .app-container {
+        @apply min-h-screen dark:bg-neutral-600 relative;
+    }
+
     .header-mobile {
-        @apply box-border p-3 bg-white border-b border-red-500 flex justify-between items-center drop-shadow
+        @apply w-full box-border py-3 px-5 absolute z-20 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow;
     }
 
     .header-btn-container {
-        @apply space-x-2
+        @apply space-x-2;
+    }
+
+    .navbar-closed {
+        @apply hidden;
+    }
+
+    .navbar-opened {
+        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5;
+    }
+
+    .navbar-link {
+        @apply text-xl font-medium; 
+    }
+
+    .navbar-link-active {
+        @apply text-red-500 font-semibold;
+    }
+
+    .menu-hamburger {
+        @apply xl:hidden;
+    }
+
+    .default-page {
+        @apply w-full absolute top-24
     }
 }
