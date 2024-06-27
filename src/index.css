@@ -4,16 +4,28 @@
 
 @layer components {
 
-    .app-container {
-        @apply min-h-screen dark:bg-neutral-600 relative;
+    .app {
+        @apply min-h-screen box-border dark:bg-neutral-600 relative xl:static;
+    }
+
+    .app-mobile {
+        @apply flex flex-col;
+    }
+
+    .app-desktop {
+        @apply xl:grid grid-cols-10 grid-rows-10
     }
 
     .header-mobile {
         @apply w-full box-border py-3 px-5 absolute z-20 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow;
     }
 
+    .header-desktop {
+        @apply w-fit static px-1 col-start-1 col-end-3 row-start-1 row-end-10 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+    }
+
     .header-btn-container {
-        @apply space-x-2;
+        @apply space-x-2 xl:space-x-1;
     }
 
     .navbar-closed {
@@ -21,7 +33,7 @@
     }
 
     .navbar-opened {
-        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5;
+        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5 col-start-1 col-end-3 row-span-2;
     }
 
     .navbar-link {
@@ -37,6 +49,6 @@
     }
 
     .default-page {
-        @apply w-full absolute top-24
+        @apply absolute top-24 xl:static col-start-3 col-end-11 row-span-9
     }
 }
