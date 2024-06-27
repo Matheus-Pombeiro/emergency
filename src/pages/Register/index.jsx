@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
+import Title from "../../components/Title";
 
 const Register = () => {
     const { t } = useTranslation();     // Translation reference
 
     return (
         <>
-            <h1>{t("Welcome")}</h1>
+            <Title 
+                title="Emergency"
+                subtitle="Please, register a patient next"
+            />
         </>
     );
 };
