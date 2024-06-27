@@ -5,6 +5,7 @@ import DefaultPage from "./components/DefaultPage";
 import Register from "./pages/Register";
 import WaitingList from "./pages/WaitingList";
 import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
 
 const App = () => {
 
@@ -29,6 +30,8 @@ const App = () => {
             </Route>
 
           </Routes>
+
+          <Footer />
 
         </div>
 
