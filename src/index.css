@@ -13,7 +13,7 @@
     }
 
     .app-desktop {
-        @apply xl:grid grid-cols-10 grid-rows-10
+        @apply xl:grid grid-cols-8 grid-rows-12
     }
 
     .header-mobile {
@@ -21,7 +21,7 @@
     }
 
     .header-desktop {
-        @apply w-full static px-3 col-start-1 col-end-3 row-start-1 row-end-10 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+        @apply w-full static px-3 col-start-1 col-end-2 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
     }
 
     .header-btn-container {
@@ -49,6 +49,18 @@
     }
 
     .default-page {
-        @apply w-full absolute top-24 xl:static col-start-3 col-end-11 row-span-9
+        @apply w-full absolute top-24 xl:static col-start-2 col-end-9 row-start-1 row-end-12;
+    }
+
+    .footer {
+        @apply w-full h-16 xl:h-full absolute bottom-0 xl:static flex justify-center items-center border-t border-red-500 col-start-1 col-end-9;
+    }
+
+    .footer-p {
+        @apply text-lg xl:text-xl; 
+    }
+
+    .footer-a {
+        @apply font-medium hover:underline;
     }
 }
