@@ -21,11 +21,11 @@
     }
 
     .header-desktop {
-        @apply w-fit static px-1 col-start-1 col-end-3 row-start-1 row-end-10 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+        @apply w-full static px-3 col-start-1 col-end-3 row-start-1 row-end-10 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
     }
 
     .header-btn-container {
-        @apply space-x-2 xl:space-x-1;
+        @apply space-x-2 flex justify-end items-center;
     }
 
     .navbar-closed {
@@ -49,6 +49,6 @@
     }
 
     .default-page {
-        @apply absolute top-24 xl:static col-start-3 col-end-11 row-span-9
+        @apply w-full absolute top-24 xl:static col-start-3 col-end-11 row-span-9
     }
 }
