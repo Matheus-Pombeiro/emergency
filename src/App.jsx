@@ -12,7 +12,7 @@ const App = () => {
     <>
       <BrowserRouter>
         
-        <div className="app-container">
+        <div className="app app-mobile app-desktop">
           
           <Header />
 
