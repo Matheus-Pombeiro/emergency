@@ -21,7 +21,7 @@ const Header = () => {
     };
 
     return (
-        <header className="header-mobile">
+        <header className="header-mobile xl:header-desktop">
             <NavLink to="/">
                 <MdLocalHospital {...logoSet}/>
             </NavLink>
