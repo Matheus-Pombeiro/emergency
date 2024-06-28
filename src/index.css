@@ -5,23 +5,23 @@
 @layer components {
 
     .app {
-        @apply min-h-screen box-border dark:bg-neutral-600 relative xl:static;
+        @apply min-h-screen box-border dark:bg-neutral-600;
     }
 
     .app-mobile {
-        @apply flex flex-col;
+        @apply flex flex-col justify-between gap-10;
     }
 
     .app-desktop {
-        @apply xl:grid grid-cols-8 grid-rows-12
+        @apply grid grid-cols-8 grid-rows-12 gap-0;
     }
 
     .header-mobile {
-        @apply w-full box-border py-3 px-5 absolute z-20 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow;
+        @apply w-full box-border py-3 px-5 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow;
     }
 
     .header-desktop {
-        @apply w-full static px-3 col-start-1 col-end-2 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+        @apply w-full px-3 col-start-1 col-end-2 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
     }
 
     .header-btn-container {
@@ -49,11 +49,11 @@
     }
 
     .default-page {
-        @apply w-full absolute top-24 xl:static col-start-2 col-end-9 row-start-1 row-end-12;
+        @apply w-full col-start-2 col-end-9 row-start-1 row-end-12 space-y-6;
     }
 
     .footer {
-        @apply w-full h-16 xl:h-full absolute bottom-0 xl:static bg-white flex justify-center items-center border-t border-red-500 col-start-1 col-end-9;
+        @apply w-full h-16 xl:h-full bg-white flex justify-center items-center border-t border-red-500 col-start-1 col-end-9;
     }
 
     .footer-p {
@@ -65,7 +65,7 @@
     }
 
     .title {
-        @apply text-center font-semibold text-red-500 dark:text-white;
+        @apply text-center font-semibold dark:text-white;
     }
 
     .h1 {
@@ -73,6 +73,31 @@
     }
 
     .h2 {
-        @apply text-lg md:text-xl mt-5;
+        @apply text-lg md:text-xl;
     }
+
+    .form {
+        @apply w-5/6 xl:w-4/6 mx-auto py-5 box-border border border-red-500 rounded space-y-4;
+    }
+
+    .fieldset {
+        @apply w-11/12 xl:w-5/6 mx-auto flex flex-col space-y-2;
+    }
+
+    .label {
+        @apply text-lg;
+    }
+
+    .input {
+        @apply w-full py-2 px-3 bg-gray-100 outline-none rounded border border-gray-200 focus:border-blue-300 focus:ring ring-blue-200 ring-opacity-20;
+    }
+
+    .input-radio {
+        @apply space-x-2;
+    }
+
+    .submit-btn {
+        @apply w-5/6 md:w-3/6 lg:w-2/6 box-border block mx-auto p-2 bg-blue-500 hover:bg-blue-600 active:bg-blue-400 text-white text-lg font-medium rounded-full;
+    }
+
 }
