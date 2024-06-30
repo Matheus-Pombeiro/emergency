@@ -13,15 +13,15 @@
     }
 
     .app-desktop {
-        @apply grid grid-cols-8 grid-rows-12 gap-0;
+        @apply grid grid-cols-12 grid-rows-12 gap-0;
     }
 
     .header-mobile {
-        @apply w-full box-border py-3 px-5 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow;
+        @apply w-full box-border py-3 px-5 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow dark:bg-neutral-300;
     }
 
     .header-desktop {
-        @apply w-full px-3 col-start-1 col-end-2 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+        @apply w-full px-3 col-start-1 col-end-3 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
     }
 
     .header-btn-container {
@@ -49,11 +49,11 @@
     }
 
     .default-page {
-        @apply w-full col-start-2 col-end-9 row-start-1 row-end-12 space-y-6;
+        @apply w-full mb-4 col-start-3 col-end-13 row-start-1 row-end-12 space-y-6;
     }
 
     .footer {
-        @apply w-full h-16 xl:h-full bg-white flex justify-center items-center border-t border-red-500 col-start-1 col-end-9;
+        @apply w-full h-16 xl:h-full bg-white flex justify-center items-center border-t border-red-500 col-start-1 col-end-13 row-start-12 row-end-13 dark:bg-neutral-300;
     }
 
     .footer-p {
@@ -77,7 +77,7 @@
     }
 
     .form {
-        @apply w-5/6 xl:w-4/6 mx-auto py-5 box-border border border-red-500 rounded space-y-4;
+        @apply w-5/6 xl:w-4/6 mx-auto py-5 box-border border border-red-500 rounded space-y-4 dark:bg-neutral-300;
     }
 
     .fieldset {
