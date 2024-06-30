@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { useState } from "react";
+
 import Header from "./components/Header";
 import DefaultPage from "./components/DefaultPage";
 import Register from "./pages/Register";
@@ -8,6 +10,9 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const [patients, setPatients] = useState([]);
+
+  console.log(patients)
 
   return (
     <>
@@ -21,7 +26,10 @@ const App = () => {
 
             <Route path="/" element={<DefaultPage />}>
 
-              <Route index element={<Register />}/>
+              <Route index element={<Register
+                  addPatient={patient => setPatients([...patients, patient])}
+                />}
+              />
 
               <Route path="waiting-list" element={<WaitingList />}/>
 
