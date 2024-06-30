@@ -1,4 +1,4 @@
-const DropDown = ({ content, data, required }) => {
+const DropDown = ({ content, data, required, value, onChange }) => {
     return (
         <fieldset className="fieldset">
             <label 
@@ -11,6 +11,8 @@ const DropDown = ({ content, data, required }) => {
                 className="input" 
                 id={content}
                 required={required}
+                value={value}
+                onChange={e => onChange(e.target.value)}
             >
                 <option value="">Choose the {content}...</option>
                 {data.length > 0 && data.map((item, index) => (

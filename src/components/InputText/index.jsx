@@ -1,4 +1,4 @@
-const InputText = ({ content, type, required }) => {
+const InputText = ({ content, type, required, value, onChange }) => {
     return (
         <fieldset className="fieldset">
             <label
@@ -13,6 +13,8 @@ const InputText = ({ content, type, required }) => {
                 type={type}
                 required={required}
                 placeholder={`${content}...`}
+                value={value}
+                onChange={e => onChange(e.target.value)}
             />
         </fieldset>
     );
