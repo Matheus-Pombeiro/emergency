@@ -7,7 +7,8 @@ const InputRadio = ({ content, id, name, value, onChange }) => {
                 name={name}
                 value={value}
                 onChange={e => onChange(e.target.value)}
-                defaultChecked={value === "Imediate"}
+                defaultChecked={value === "1"}
+                
             />
             <label 
                 className="label"
