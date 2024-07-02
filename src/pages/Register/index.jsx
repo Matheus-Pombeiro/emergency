@@ -18,11 +18,16 @@ const Register = ({ addPatient }) => {
     const [photo, setPhoto] = useState("");
     const [city, setCity] = useState("");
     const [doctor, setDoctor] = useState("");
-    const [urgency, setUrgency] = useState("Imediate");
+    const [urgency, setUrgency] = useState("");
 
     // Declare an array to keep the doctor options
     const [doctorData, setDoctorData] = useState([
         "Cardiologist", "General Practitioner", "Ophthalmologist", "Orthopedist", "Endocrinologist", "Gastroenterologist"
+    ]);
+
+    // Declare an array to keep the urgency level options
+    const [urgencyData, setUrgencyData] = useState([
+        "1", "2", "3"
     ]);
 
     // Send the patient's data to the top level component
@@ -46,7 +51,7 @@ const Register = ({ addPatient }) => {
         setPhoto("");
         setCity("");
         setDoctor("");
-        setUrgency("Imediate");
+        setUrgency("");
     };
 
     // Declare a const to keep the input radio name
@@ -103,38 +108,13 @@ const Register = ({ addPatient }) => {
                     onChange={value => setDoctor(value)}
                 />
 
-                <fieldset className="fieldset">
-                    <label
-                        className="label"
-                        htmlFor="Imediate"
-                    >
-                        {inputRadioName}
-                    </label>
-
-                    <InputRadio 
-                        content="Imediate"
-                        id="Imediate"
-                        name={inputRadioName}
-                        value={"Imediate"}
-                        onChange={value => setUrgency(value)}
-                    />
-
-                    <InputRadio 
-                        content="Needs Care"
-                        id="Needs Care"
-                        name={inputRadioName}
-                        value={"Needs Care"}
-                        onChange={value => setUrgency(value)}
-                    />
-
-                    <InputRadio 
-                        content="Can Wait"
-                        id="Can Wait"
-                        name={inputRadioName}
-                        value={"Can Wait"}
-                        onChange={value => setUrgency(value)}
-                    />
-                </fieldset>
+                <DropDown 
+                    content={"Urgency Level"}
+                    data={urgencyData}
+                    required={true}
+                    value={urgency}
+                    onChange={value => setUrgency(value)}
+                />
 
                 <button 
                     type="submit"
