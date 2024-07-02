@@ -1,7 +1,17 @@
-const WaitingList = () => {
+import Table from "../../components/Table";
+import Title from "../../components/Title";
+
+const WaitingList = ({ patients }) => {
     return (
         <>
-            <h1>Good Afternoon</h1>
+            <Title 
+                title="Waiting List"
+                subtitle="Next you can see the waiting list"
+            />
+
+            {patients.length > 0 && (
+                <Table patients={patients}/>
+            )}
         </>
     );
 };
