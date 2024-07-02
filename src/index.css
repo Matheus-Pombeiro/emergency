@@ -37,7 +37,7 @@
     }
 
     .navbar {
-        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5;
+        @apply w-full py-5 box-border flex-col justify-center items-center gap-5;
     }
 
     .navbar-closed {
@@ -49,7 +49,7 @@
     }
 
     .navbar-desktop {
-        @apply col-start-1 col-end-3 row-span-2;
+        @apply flex col-start-1 col-end-3 row-span-2;
     }
 
     .navbar-link {
@@ -150,6 +150,14 @@
 
     .delete-btn {
         @apply mx-auto cursor-pointer;
+    }
+
+    .search-bar-container {
+        @apply w-5/6 xl:w-3/6 mx-auto pr-3 box-border bg-neutral-200 flex justify-between items-center border border-red-500 rounded-full;
+    }
+
+    .search-bar-input {
+        @apply w-11/12 py-3 pl-5 bg-neutral-200 rounded-s-full outline-none text-lg;
     }
 
 }
