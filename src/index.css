@@ -5,19 +5,19 @@
 @layer components {
 
     .app {
-        @apply min-h-screen box-border dark:bg-neutral-600;
+        @apply min-h-screen box-border dark:bg-neutral-600 grid;
     }
 
     .app-mobile {
-        @apply flex flex-col justify-between gap-10;
+        @apply grid-cols-1 grid-rows-10 gap-4;
     }
 
     .app-desktop {
-        @apply grid grid-cols-12 grid-rows-12 gap-0;
+        @apply grid-cols-12 grid-rows-12 gap-0;
     }
 
     .header-mobile {
-        @apply w-full box-border py-3 px-5 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow dark:bg-neutral-300;
+        @apply w-full box-border py-3 px-5 col-start-1 col-end-2 row-start-1 row-end-2 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow dark:bg-neutral-300;
     }
 
     .header-desktop {
@@ -49,11 +49,27 @@
     }
 
     .default-page {
-        @apply w-full mb-4 col-start-3 col-end-13 row-start-1 row-end-12 space-y-6;
+        @apply w-full mb-4 space-y-6
+    }
+
+    .default-page-mobile {
+        @apply col-start-1 col-end-2 row-start-2 row-end-10
+    }
+
+    .default-page-desktop {
+        @apply  col-start-3 col-end-13 row-start-1 row-end-12 ;
     }
 
     .footer {
-        @apply w-full h-16 xl:h-full bg-white flex justify-center items-center border-t border-red-500 col-start-1 col-end-13 row-start-12 row-end-13 dark:bg-neutral-300;
+        @apply w-full h-full bg-white flex justify-center items-center border-t border-red-500  dark:bg-neutral-300;
+    }
+
+    .footer-mobile {
+        @apply col-start-1 col-end-2 row-start-10 row-end-11
+    }
+
+    .footer-desktop {
+        @apply col-start-1 col-end-13 row-start-12 row-end-13
     }
 
     .footer-p {
@@ -101,7 +117,7 @@
     }
 
     .table-container {
-        @apply w-11/12 md:w-fit md:max-w-2xl lg:max-w-4xl overflow-x-auto mx-auto border border-red-500 rounded drop-shadow;
+        @apply w-11/12 md:w-fit md:max-w-2xl lg:max-w-4xl overflow-x-auto mx-auto border border-red-500 rounded drop-shadow dark:bg-neutral-300;
     }
 
     .table-row {
