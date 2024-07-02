@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import WaitingList from "./pages/WaitingList";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [patients, setPatients] = useState([
@@ -58,15 +59,23 @@ const App = () => {
     }
   ]);
 
-  console.log(patients)
+  // Set a initial value for the menu hamburger state (opened / closed)
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  console.log(menuIsOpen)
 
   return (
     <>
       <BrowserRouter>
         
-        <div className="app app-mobile xl:app-desktop">
+        <div className={`app app-mobile xl:app-desktop
+            ${menuIsOpen ? "app-menu-hamburger" : ""}
+          `}>
           
-          <Header />
+          <Header 
+            handleMenuHamburger={() => setMenuIsOpen(!menuIsOpen)}
+            menuIsOpen={menuIsOpen}
+          />
 
           <Routes>
 

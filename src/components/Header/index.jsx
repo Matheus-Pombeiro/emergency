@@ -7,10 +7,7 @@ import { useState } from "react";
 import MenuHamburger from "../MenuHamburger";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
-    // Set a initial value for the menu hamburger state (opened / closed)
-    const [menuIsOpen, setMenuIsOpen] = useState(false);
-
+const Header = ({ handleMenuHamburger, menuIsOpen }) => {
     const logoSet = {   // Logo settings
         size: 45,
         color: "red"
@@ -21,7 +18,9 @@ const Header = () => {
     };
 
     return (
-        <header className="header-mobile xl:header-desktop">
+        <header className={`header-mobile xl:header-desktop
+            ${menuIsOpen ? "header-menu-hamburger" : ""}
+        `}>
             <NavLink to="/">
                 <MdLocalHospital {...logoSet}/>
             </NavLink>
@@ -32,7 +31,7 @@ const Header = () => {
                 <MenuHamburger 
                     btnSet={btnSet}
                     menuIsOpen={menuIsOpen}
-                    handleMenuHamburger={() => setMenuIsOpen(!menuIsOpen)}
+                    handleMenuHamburger={handleMenuHamburger}
                 />
             </div>
 

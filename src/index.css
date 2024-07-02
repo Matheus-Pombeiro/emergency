@@ -16,24 +16,40 @@
         @apply grid-cols-12 grid-rows-12 gap-0;
     }
 
+    .app-menu-hamburger {
+        @apply relative
+    }
+
     .header-mobile {
         @apply w-full box-border py-3 px-5 col-start-1 col-end-2 row-start-1 row-end-2 bg-white border-b border-red-500 flex justify-between items-center flex-wrap drop-shadow dark:bg-neutral-300;
     }
 
+    .header-menu-hamburger {
+        @apply absolute min-h-screen items-start z-20 border-b-0;
+    }
+
     .header-desktop {
-        @apply w-full px-3 col-start-1 col-end-3 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
+        @apply w-full max-h-full px-3 col-start-1 col-end-3 row-start-1 row-end-12 items-start grid grid-cols-2 grid-rows-12 border-b-0 border-r drop-shadow-none;
     }
 
     .header-btn-container {
         @apply space-x-2 flex justify-end items-center;
     }
 
+    .navbar {
+        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5;
+    }
+
     .navbar-closed {
         @apply hidden;
     }
 
-    .navbar-opened {
-        @apply w-full py-5 box-border flex flex-col justify-center items-center gap-5 col-start-1 col-end-3 row-span-2;
+    .navbar-mobile {
+        @apply flex
+    }
+
+    .navbar-desktop {
+        @apply col-start-1 col-end-3 row-span-2;
     }
 
     .navbar-link {

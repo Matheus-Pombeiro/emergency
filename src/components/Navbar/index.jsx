@@ -2,8 +2,8 @@ import NavbarLink from "../NavbarLink";
 
 const Navbar = ({ menuIsOpen }) => {
     return (
-        <nav className={`xl:navbar-opened
-            ${menuIsOpen ? "navbar-opened" : "navbar-closed"}
+        <nav className={`navbar xl:navbar-desktop
+            ${menuIsOpen ? "navbar-mobile" : "navbar-closed"}
         `}>
             <NavbarLink to="/">
                 {"Register"}
