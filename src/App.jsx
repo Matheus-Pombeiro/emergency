@@ -62,7 +62,13 @@ const App = () => {
   // Set a initial value for the menu hamburger state (opened / closed)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  console.log(menuIsOpen)
+  // Declare a state that will contain the search value made by the user
+  const [search, setSearch] = useState("");
+
+  // Declare a state that will contain the filter option choosed by the user
+  const [filter, setFilter] = useState("");
+
+  console.log(filter)
 
   return (
     <>
@@ -88,6 +94,10 @@ const App = () => {
 
               <Route path="waiting-list" element={<WaitingList
                   patients={patients}
+                  search={search}
+                  setSearch={setSearch}
+                  filter={filter}
+                  setFilter={setFilter}
                 />}
               />
 
