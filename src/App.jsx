@@ -19,7 +19,8 @@ const App = () => {
       photo: "",
       city: "Cianorte",
       doctor: "Cardiologist",
-      urgency: "1"
+      urgency: "1",
+      status: true
     },
     {
       id: 2,
@@ -28,7 +29,8 @@ const App = () => {
       photo: "",
       city: "New York",
       doctor: "Ophthalmologist",
-      urgency: "2"
+      urgency: "2",
+      status: true
     },
     {
       id: 3,
@@ -37,7 +39,8 @@ const App = () => {
       photo: "",
       city: "Cincinati",
       doctor: "General Practitioner",
-      urgency: "3"
+      urgency: "3",
+      status: true
     },
     {
       id: 4,
@@ -46,7 +49,8 @@ const App = () => {
       photo: "",
       city: "Buenos Aires",
       doctor: "Orthopedist",
-      urgency: "2"
+      urgency: "2",
+      status: true
     },
     {
       id: 5,
@@ -55,20 +59,25 @@ const App = () => {
       photo: "",
       city: "Tokyo",
       doctor: "Endocrinologist",
-      urgency: "1"
+      urgency: "1",
+      status: true
     }
   ]);
 
   // Set a initial value for the menu hamburger state (opened / closed)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  // Declare a state that will contain the search value made by the user
-  const [search, setSearch] = useState("");
+  // Delete a patient choosed by the user based on their id 
+  const handleDeletePatient = (id) => {
+    setPatients(patients.filter(patient => patient.id !== id));
+  };
 
-  // Declare a state that will contain the filter option choosed by the user
-  const [filter, setFilter] = useState("");
-
-  console.log(filter)
+  // Change the patient's status
+  const handlePatientStatus = (id) => {
+    patients.map(patient => {
+      patient.id === id ? setPatients([...patients], patient.status = !patient.status) : null;
+    });
+  };
 
   return (
     <>
@@ -94,10 +103,8 @@ const App = () => {
 
               <Route path="waiting-list" element={<WaitingList
                   patients={patients}
-                  search={search}
-                  setSearch={setSearch}
-                  filter={filter}
-                  setFilter={setFilter}
+                  deletePatient={handleDeletePatient}
+                  changeStatus={handlePatientStatus}
                 />}
               />
 
