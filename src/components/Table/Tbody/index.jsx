@@ -1,7 +1,7 @@
 import { FaCircle } from "react-icons/fa6";
 import { TiDelete } from "react-icons/ti";
 
-const Tbody = ({ patients, search, filter }) => {
+const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
     return (
         <tbody>
             {patients.filter(patient => 
@@ -29,10 +29,22 @@ const Tbody = ({ patients, search, filter }) => {
                             {patient.doctor}
                         </td>
                         <td className="table-cell">
-                            <button className="status-btn">Waiting</button>
+                            <button 
+                                className={`status-btn
+                                        ${patient.status ? "status-waiting" : "status-treated"}
+                                    `}
+                                onClick={() => changeStatus(patient.id)}
+                            >
+                                {patient.status ? "Waiting" : "Treated"}
+                            </button>
                         </td>
                         <td className="table-cell">
-                            <TiDelete color="red" size={25} className="delete-btn"/>
+                            <TiDelete 
+                                color="red" 
+                                size={25} 
+                                className="delete-btn"
+                                onClick={() => deletePatient(patient.id)}
+                            />
                         </td>
                     </tr>
                 ))
