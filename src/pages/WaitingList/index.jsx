@@ -1,11 +1,17 @@
 import { useState } from "react";
-import DropDown from "../../components/DropDown";
+
 import SearchBar from "../../components/SearchBar";
 import Table from "../../components/Table";
 import Title from "../../components/Title";
 import Filter from "../../components/Filter";
 
-const WaitingList = ({ patients, search, setSearch, filter, setFilter }) => {
+const WaitingList = ({ patients, deletePatient, changeStatus }) => {
+    // Declare a state that will contain the search value made by the user
+    const [search, setSearch] = useState("");
+
+    // Declare a state that will contain the filter option choosed by the user
+    const [filter, setFilter] = useState("");
+    
     // Declare an array to keep the filter options
     const [filterOptions, setFilterOptions] = useState([
         "Urgency", "Name", "Doctor"  
@@ -35,6 +41,8 @@ const WaitingList = ({ patients, search, setSearch, filter, setFilter }) => {
                     patients={patients}
                     search={search}
                     filter={filter}
+                    deletePatient={deletePatient}
+                    changeStatus={changeStatus}
                 />
             )}
         </>
