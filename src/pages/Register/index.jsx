@@ -42,7 +42,8 @@ const Register = ({ addPatient }) => {
             photo,
             city,
             doctor,
-            urgency
+            urgency,
+            status: true
         });
 
         // Clean the states
