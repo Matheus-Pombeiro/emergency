@@ -17,6 +17,9 @@ const Thead = () => {
                 <th className="table-cell">
                     Delete
                 </th>
+                <th className="table-cell">
+                    Details
+                </th>
             </tr>
         </thead>
     );
