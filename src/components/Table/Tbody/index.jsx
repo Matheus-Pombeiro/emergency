@@ -1,5 +1,6 @@
-import { FaCircle } from "react-icons/fa6";
+import { FaCircle, FaCircleInfo } from "react-icons/fa6";
 import { TiDelete } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
     return (
@@ -42,9 +43,17 @@ const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
                             <TiDelete 
                                 color="red" 
                                 size={25} 
-                                className="delete-btn"
+                                className="patient-btn"
                                 onClick={() => deletePatient(patient.id)}
                             />
+                        </td>
+                        <td className="table-cell">
+                            <Link to={`/patient/${patient.id}`}>
+                                <FaCircleInfo
+                                    size={20}
+                                    className="patient-btn"
+                                />
+                            </Link>
                         </td>
                     </tr>
                 ))
