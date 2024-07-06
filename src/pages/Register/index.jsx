@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Title from "../../components/Title";
 import InputText from "../../components/InputText";
 import DropDown from "../../components/DropDown";
-import InputRadio from "../../components/InputRadio";
 
 const Register = ({ addPatient }) => {
     const { t } = useTranslation();     // Translation reference
@@ -54,9 +53,6 @@ const Register = ({ addPatient }) => {
         setDoctor("");
         setUrgency("");
     };
-
-    // Declare a const to keep the input radio name
-    const inputRadioName = "Urgency Level";
 
     return (
         <>
