@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import DefaultPage from "./components/DefaultPage";
@@ -8,9 +8,9 @@ import Register from "./pages/Register";
 import WaitingList from "./pages/WaitingList";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 
 const App = () => {
+  // Declare an array that will keep all the patients
   const [patients, setPatients] = useState([
     {
       id: 1,
@@ -63,6 +63,25 @@ const App = () => {
       status: true
     }
   ]);
+
+  // Get the patients from the localStorage()
+  useEffect(() => {
+    try {
+      const data = window.localStorage.getItem("patients");
+      data !== null ? setPatients(JSON.parse(data)) : null;
+    } catch (error) {
+      alert("Sorry, but we couldn't get your patients from our database");
+    }
+  }, []);
+
+  // Save the patients in the localStorage() 
+  useEffect(() => {
+    try {
+      window.localStorage.setItem("patients", JSON.stringify(patients));
+    } catch (error) {
+      alert("Sorry, but we couldn't save your patient in our database. Please, try to clean up your browser's localStorage().");
+    }
+  }, [patients]);
 
   // Set a initial value for the menu hamburger state (opened / closed)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
