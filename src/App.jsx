@@ -8,22 +8,23 @@ import Register from "./pages/Register";
 import WaitingList from "./pages/WaitingList";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import Patient from "./pages/Patient";
 
 const App = () => {
   // Declare an array that will keep all the patients
   const [patients, setPatients] = useState([
     {
-      id: 1,
+      id: "1",
       name: "Matheus",
       age: 23,
-      photo: "",
+      photo: "https://media.licdn.com/dms/image/D4D03AQF7OC59nWxZWQ/profile-displayphoto-shrink_200_200/0/1709071293936?e=1725494400&v=beta&t=Tgh8nheoVw0jJ7M4rruA-znt7sMQdGWvtFVQzMHZ7z8",
       city: "Cianorte",
       doctor: "Cardiologist",
       urgency: "1",
       status: true
     },
     {
-      id: 2,
+      id: "2",
       name: "Maria",
       age: 25,
       photo: "",
@@ -33,7 +34,7 @@ const App = () => {
       status: true
     },
     {
-      id: 3,
+      id: "3",
       name: "John",
       age: 28,
       photo: "",
@@ -43,7 +44,7 @@ const App = () => {
       status: true
     },
     {
-      id: 4,
+      id: "4",
       name: "Carla Carla Carla Carla Carla Carla Carla",
       age: 22,
       photo: "",
@@ -53,7 +54,7 @@ const App = () => {
       status: true
     },
     {
-      id: 5,
+      id: "5",
       name: "Fuwatomi",
       age: 25,
       photo: "",
@@ -124,6 +125,11 @@ const App = () => {
                   patients={patients}
                   deletePatient={handleDeletePatient}
                   changeStatus={handlePatientStatus}
+                />}
+              />
+
+              <Route path="patient/:id" element={<Patient 
+                  patients={patients}
                 />}
               />
 
