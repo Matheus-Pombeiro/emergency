@@ -16,26 +16,25 @@ const Patient = ({ patients }) => {
                 subtitle="Next you can see the patient's data"
             />
 
-            <section>
-                {patient.photo && (
-                    <figure>
-                        <img src={patient.photo} />
-                    </figure>
-                )}
-
-                <div>
-                    <p>Name: {patient.name}</p>
-                    <p>Age: {patient.age}</p>
-                    <p>City of Birth: {patient.city}</p>
-                    <p>Doctor: {patient.doctor}</p>
-                    <p>Urgency Level: {patient.urgency === "1"
-                            ? "Immediate"
-                            : patient.urgency === "2"
-                                ? "Needs Care"
-                                : "Can Wait"
-                        }</p>
-                    <p>Status: {patient.status === true ? "Waiting" : "Treated"}</p>
-                </div>
+            <section className="patient-container">
+                <figure className="patient-content">
+                    {patient.photo && (
+                        <img src={patient.photo} className="profile-photo"/>
+                    )}
+                    <figcaption>
+                        <p>Name: {patient.name}</p>
+                        <p>Age: {patient.age}</p>
+                        <p>City of Birth: {patient.city}</p>
+                        <p>Doctor: {patient.doctor}</p>
+                        <p>Urgency Level: {patient.urgency === "1"
+                                ? "Immediate"
+                                : patient.urgency === "2"
+                                    ? "Needs Care"
+                                    : "Can Wait"
+                            }</p>
+                        <p>Status: {patient.status === true ? "Waiting" : "Treated"}</p>
+                    </figcaption>
+                </figure>
             </section>
         </>
     );
