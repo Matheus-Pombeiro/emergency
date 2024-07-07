@@ -26,7 +26,7 @@ const Header = ({ handleMenuHamburger, menuIsOpen }) => {
             </NavLink>
 
             <div className="header-btn-container">
-                <ThemeSwitcher btnSet={btnSet}/>
+                <ThemeSwitcher />
                 <LanguageSwitcher btnSet={btnSet}/>
                 <MenuHamburger 
                     btnSet={btnSet}
