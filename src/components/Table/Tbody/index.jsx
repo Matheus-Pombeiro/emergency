@@ -42,7 +42,7 @@ const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
                         <td className="table-cell">
                             <TiDelete 
                                 color="red" 
-                                size={25} 
+                                size={30} 
                                 className="patient-btn"
                                 onClick={() => deletePatient(patient.id)}
                             />
