@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const DropDown = ({ content, data, required, value, onChange }) => {
+    const { t } = useTranslation(); // Translation reference
+
     return (
         <fieldset className="fieldset">
             <label 
@@ -14,13 +18,13 @@ const DropDown = ({ content, data, required, value, onChange }) => {
                 value={value}
                 onChange={e => onChange(e.target.value)}
             >
-                <option value="">Choose the {content}...</option>
+                <option value="">{t("Choose the")} {content}...</option>
                 {data.length > 0 && data.map((item, index) => (
                     <option
                         key={index}
                         value={item}
                     >
-                        {item}
+                        {t(item)}
                     </option>
                 ))}
             </select>

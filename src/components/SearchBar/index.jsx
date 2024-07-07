@@ -1,12 +1,16 @@
+import { useTranslation } from "react-i18next";
+
 import { IoSearchOutline } from "react-icons/io5";
 
 const SearchBar = ({ search, setSearch }) => {
+    const { t } = useTranslation(); // Translation reference
+
     return (
         <fieldset className="search-bar-container">
             <input
                 className="search-bar-input"
                 type="text"
-                placeholder="Enter the patient's name..."
+                placeholder={t("Search bar placeholder")}
                 value={search}
                 onChange={e => setSearch(e.target.value)}
             />

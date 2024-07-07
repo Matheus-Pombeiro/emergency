@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 import { FaCircle, FaCircleInfo } from "react-icons/fa6";
 import { TiDelete } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
 const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
+    const { t } = useTranslation(); // Translation reference
+    
     return (
         <tbody>
             {patients.filter(patient => 
@@ -27,7 +31,7 @@ const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
                             {patient.name}
                         </td>
                         <td className="table-cell">
-                            {patient.doctor}
+                            {t(patient.doctor)}
                         </td>
                         <td className="table-cell">
                             <button 
@@ -36,7 +40,7 @@ const Tbody = ({ patients, search, filter, deletePatient, changeStatus }) => {
                                     `}
                                 onClick={() => changeStatus(patient.id)}
                             >
-                                {patient.status ? "Waiting" : "Treated"}
+                                {patient.status ? t("Waiting") : t("Treated")}
                             </button>
                         </td>
                         <td className="table-cell">

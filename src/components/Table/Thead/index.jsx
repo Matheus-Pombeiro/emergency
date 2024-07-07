@@ -1,24 +1,28 @@
+import { useTranslation } from "react-i18next";
+
 const Thead = () => {
+    const { t } = useTranslation(); // Translation reference
+
     return (
         <thead>
             <tr className="table-row">
                 <th className="table-cell">
-                    Urgency
+                    {t("Urgency")}
                 </th>
                 <th className="table-cell">
-                    Name
+                    {t("Name")}
                 </th>
                 <th className="table-cell">
-                    Doctor
+                    {t("Doctor")}
                 </th>
                 <th className="table-cell">
-                    Status
+                    {t("Status")}
                 </th>
                 <th className="table-cell">
-                    Delete
+                    {t("Delete")}
                 </th>
                 <th className="table-cell">
-                    Details
+                    {t("Details")}
                 </th>
             </tr>
         </thead>

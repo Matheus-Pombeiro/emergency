@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { useState } from "react";
 
 import SearchBar from "../../components/SearchBar";
@@ -6,6 +8,8 @@ import Title from "../../components/Title";
 import Filter from "../../components/Filter";
 
 const WaitingList = ({ patients, deletePatient, changeStatus }) => {
+    const { t } = useTranslation(); // Translation reference
+    
     // Declare a state that will contain the search value made by the user
     const [search, setSearch] = useState("");
 
@@ -20,8 +24,8 @@ const WaitingList = ({ patients, deletePatient, changeStatus }) => {
     return (
         <>
             <Title 
-                title="Waiting List"
-                subtitle="Next you can see the waiting list"
+                title={t("Waiting List")}
+                subtitle={t("Waiting List subtitle")}
             />
 
             <SearchBar 
@@ -30,7 +34,7 @@ const WaitingList = ({ patients, deletePatient, changeStatus }) => {
             />
 
             <Filter 
-                content="Order"
+                content={t("Order")}
                 data={filterOptions}
                 filter={filter}
                 setFilter={setFilter}

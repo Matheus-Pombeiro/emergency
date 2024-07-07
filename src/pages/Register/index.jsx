@@ -57,8 +57,8 @@ const Register = ({ addPatient }) => {
     return (
         <>
             <Title 
-                title="Emergency"
-                subtitle="Please, register a patient next"
+                title={t("Rgister title")}
+                subtitle={t("Register subtitle")}
             />
 
             <form 
@@ -66,7 +66,7 @@ const Register = ({ addPatient }) => {
                 onSubmit={onSubmit}
             >
                 <InputText 
-                    content="Name"
+                    content={t("Name")}
                     type="text"
                     required={true}
                     value={name}
@@ -74,7 +74,7 @@ const Register = ({ addPatient }) => {
                 />
 
                 <InputText 
-                    content="Age"
+                    content={t("Age")}
                     type="number"
                     required={true}
                     value={age}
@@ -82,7 +82,7 @@ const Register = ({ addPatient }) => {
                 />
 
                 <InputText 
-                    content="Photo"
+                    content={t("Photo")}
                     type="text"
                     required={false}
                     value={photo}
@@ -90,7 +90,7 @@ const Register = ({ addPatient }) => {
                 />
 
                 <InputText 
-                    content="City of Birth"
+                    content={t("City of Birth")}
                     type="text"
                     required={true}
                     value={city}
@@ -98,7 +98,7 @@ const Register = ({ addPatient }) => {
                 />
 
                 <DropDown 
-                    content="Doctor"
+                    content={t("Doctor")}
                     data={doctorData}
                     required={true}
                     value={doctor}
@@ -106,7 +106,7 @@ const Register = ({ addPatient }) => {
                 />
 
                 <DropDown 
-                    content={"Urgency Level"}
+                    content={t("Urgency Level")}
                     data={urgencyData}
                     required={true}
                     value={urgency}
@@ -117,7 +117,7 @@ const Register = ({ addPatient }) => {
                     type="submit"
                     className="submit-btn"
                 >
-                    Register
+                    {t("Register")}
                 </button>
             </form>
         </>

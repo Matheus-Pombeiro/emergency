@@ -1,9 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 const Tfooter = ({ patients }) => {
+    const { t } = useTranslation(); // Translation reference
+
     return (
         <tfoot>
             <tr>
                 <td className="table-cell">
-                    Number of Patients:
+                    {t("Number of Patients:")}
                 </td>
                 <td className="table-cell">
                     {patients.length}
