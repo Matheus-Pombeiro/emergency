@@ -1,7 +1,16 @@
+import Title from "../../components/Title";
+
 const NotFound = () => {
     return (
         <>
-            <h1>Not Found!</h1>
+            <Title 
+                title="Page Not Found"
+                subtitle="Sorry, but we couldn't find this page"
+            />
+
+            <figure className="not-found-container">
+                <img src="/assets/number-page-not-found.png"/>
+            </figure>
         </>
     );
 };
