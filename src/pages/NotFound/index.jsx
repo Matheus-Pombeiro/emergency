@@ -6,7 +6,7 @@ const NotFound = () => {
     const { t } = useTranslation(); // Translation reference
 
     return (
-        <main>
+        <main className="default-page default-page-mobile xl:default-page-desktop">
             <Title 
                 title={t("Page Not Found title")}
                 subtitle={t("Page Not Found subtitle")}
