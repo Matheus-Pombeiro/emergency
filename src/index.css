@@ -181,7 +181,7 @@
     }
 
     .profile-photo {
-        @apply rounded-full
+        @apply size-72 rounded-full
     }
 
     .not-found-container {
