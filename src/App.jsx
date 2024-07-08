@@ -12,58 +12,7 @@ import Patient from "./pages/Patient";
 
 const App = () => {
   // Declare an array that will keep all the patients
-  const [patients, setPatients] = useState([
-    {
-      id: "1",
-      name: "Matheus",
-      age: 23,
-      photo: "https://media.licdn.com/dms/image/D4D03AQF7OC59nWxZWQ/profile-displayphoto-shrink_200_200/0/1709071293936?e=1725494400&v=beta&t=Tgh8nheoVw0jJ7M4rruA-znt7sMQdGWvtFVQzMHZ7z8",
-      city: "Cianorte",
-      doctor: "Cardiologist",
-      urgency: "1",
-      status: true
-    },
-    {
-      id: "2",
-      name: "Maria",
-      age: 25,
-      photo: "",
-      city: "New York",
-      doctor: "Ophthalmologist",
-      urgency: "2",
-      status: true
-    },
-    {
-      id: "3",
-      name: "John",
-      age: 28,
-      photo: "",
-      city: "Cincinati",
-      doctor: "General Practitioner",
-      urgency: "3",
-      status: true
-    },
-    {
-      id: "4",
-      name: "Carla Carla Carla Carla Carla Carla Carla",
-      age: 22,
-      photo: "",
-      city: "Buenos Aires",
-      doctor: "Orthopedist",
-      urgency: "2",
-      status: true
-    },
-    {
-      id: "5",
-      name: "Fuwatomi",
-      age: 25,
-      photo: "",
-      city: "Tokyo",
-      doctor: "Endocrinologist",
-      urgency: "1",
-      status: true
-    }
-  ]);
+  const [patients, setPatients] = useState([]);
 
   // Get the patients from the localStorage()
   useEffect(() => {
@@ -133,9 +82,9 @@ const App = () => {
                 />}
               />
 
-              <Route path="*" element={<NotFound />} />
-
             </Route>
+
+            <Route path="*" element={<NotFound />} />
 
           </Routes>
 
