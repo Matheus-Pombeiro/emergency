@@ -14,24 +14,24 @@ const App = () => {
   // Declare an array that will keep all the patients
   const [patients, setPatients] = useState([]);
 
-  // Get the patients from the localStorage()
-  useEffect(() => {
-    try {
-      const data = window.localStorage.getItem("patients");
-      data !== null ? setPatients(JSON.parse(data)) : null;
-    } catch (error) {
-      alert("Sorry, but we couldn't get your patients from our database");
-    }
-  }, []);
+  // // Get the patients from the localStorage()
+  // useEffect(() => {
+  //   try {
+  //     const data = window.localStorage.getItem("patients");
+  //     data !== null ? setPatients(JSON.parse(data)) : null;
+  //   } catch (error) {
+  //     alert("Sorry, but we couldn't get your patients from our database");
+  //   }
+  // }, []);
 
-  // Save the patients in the localStorage() 
-  useEffect(() => {
-    try {
-      window.localStorage.setItem("patients", JSON.stringify(patients));
-    } catch (error) {
-      alert("Sorry, but we couldn't save your patient in our database. Please, try to clean up your browser's localStorage().");
-    }
-  }, [patients]);
+  // // Save the patients in the localStorage() 
+  // useEffect(() => {
+  //   try {
+  //     window.localStorage.setItem("patients", JSON.stringify(patients));
+  //   } catch (error) {
+  //     alert("Sorry, but we couldn't save your patient in our database. Please, try to clean up your browser's localStorage().");
+  //   }
+  // }, [patients]);
 
   // Set a initial value for the menu hamburger state (opened / closed)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
