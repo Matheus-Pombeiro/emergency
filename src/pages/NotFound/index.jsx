@@ -6,7 +6,7 @@ const NotFound = () => {
     const { t } = useTranslation(); // Translation reference
 
     return (
-        <>
+        <main>
             <Title 
                 title={t("Page Not Found title")}
                 subtitle={t("Page Not Found subtitle")}
@@ -18,7 +18,7 @@ const NotFound = () => {
                     alt={t("Page Not Found title")}
                 />
             </figure>
-        </>
+        </main>
     );
 };
 
